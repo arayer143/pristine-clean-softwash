@@ -1,13 +1,15 @@
 import { Metadata } from 'next'
 
-import { Footer } from '@/components/Footer/footer'
+import { Footer } from '@/components/footer'
 import { HeroSection } from '@/components/Home Page/hero'
-import Navbar from '@/components/Navbar/navbar'
+import Navbar from '@/components/navbar'
 import AboutSection from '@/components/Home Page/about-us'
 import ServicesSection from '@/components/Home Page/our-services'
 
 import SectionWrapper from '@/components/section-wrapper'
 import WhyUsSection from '@/components/Home Page/why-us-section'
+import BusinessSolutionsSection from '@/components/Home Page/business-solutions-section'
+import CTASection from '@/components/call-to-action'
 
 
 export const metadata: Metadata = {
@@ -33,10 +35,25 @@ export default function Home() {
       <ServicesSection />
       </SectionWrapper>
 
+      <SectionWrapper colorScheme="primary">
+      <CTASection 
+          title="Ready to Experience the Pristine Clean Difference?"
+          description="Schedule your professional cleaning service today and see the transformation for yourself!"
+          buttonText="Get a Free Quote"
+          buttonLink="/contact"
+        />
+           </SectionWrapper>
 
-          <SectionWrapper colorScheme="primary">
+
+
+          <SectionWrapper colorScheme="secondary">
             <WhyUsSection />
           </SectionWrapper>
+
+          
+      <SectionWrapper colorScheme="primary">
+      <BusinessSolutionsSection />
+      </SectionWrapper>
    
 
       </main>

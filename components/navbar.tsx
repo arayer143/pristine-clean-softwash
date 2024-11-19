@@ -19,14 +19,14 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Menu, Moon, Sun, ChevronDown } from 'lucide-react'
 
 const services = [
-  { title: 'All Services', href: '/services' },
-  { title: 'Soft & Pressure Washing', href: '/soft-and-pressure-washing' },
-  { title: 'Roof Washing', href: '/roof-washing' },
-  { title: 'Concrete and Deck Washing', href: '/concrete-washing' },
-  { title: 'Gutter Cleaning', href: '/gutter-cleaning' },
-  { title: 'Fleet Cleaning', href: '/fleet-cleaning' },
-  { title: 'Commercial Properties', href: '/commercial' },
-  { title: 'Oxidation Removal', href: '/oxidation' },
+  { title: 'All Services', href: '/services/all-services' },
+  { title: 'Soft & Pressure Washing', href: '/services/soft-and-pressure-washing' },
+  { title: 'Roof Washing', href: '/services/roof-washing' },
+  { title: 'Concrete and Deck Washing', href: '/services/concrete-washing' },
+  { title: 'Gutter Cleaning', href: '/services/gutter-cleaning' },
+  { title: 'Fleet Cleaning', href: '/services/fleet-cleaning' },
+  { title: 'Commercial Properties', href: '/services/commercial-properties' },
+  { title: 'Oxidation Removal', href: '/services/oxidation' },
 ]
 
 export default function Navbar() {

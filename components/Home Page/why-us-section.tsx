@@ -58,7 +58,7 @@ const WhyUsSection = () => {
   }, [])
 
   return (
-    <section id="why-us" className="py-7 md:py-24 overflow-hidden">
+    <section id="why-us" className="py-7 md:py-9 overflow-hidden">
       <div className="container mx-auto px-4">
         <SectionTitle 
           title="Why Choose Pristine Clean Soft Wash?"
@@ -106,9 +106,9 @@ const WhyUsSection = () => {
             transition={{ duration: 0.5 }}
           >
             <SectionTitle 
-              title="Our Services"
+              title="Featured Services Services"
               as="h3"
-              className="mb-8"
+              className="mb-1"
             />
             <div className="relative h-[400px] w-full max-w-md overflow-hidden rounded-lg shadow-lg">
               {services.map((service, index) => (
