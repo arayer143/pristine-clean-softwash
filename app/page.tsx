@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { Footer } from '@/components/Footer/footer'
 import { HeroSection } from '@/components/Home Page/hero'
 import Navbar from '@/components/Navbar/navbar'
+import AboutSection from '@/components/Home Page/about-us'
 
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
     <HeroSection />
+    <AboutSection />
 
       </main>
       <Footer />
