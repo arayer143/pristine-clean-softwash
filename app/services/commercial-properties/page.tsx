@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from '@/components/navbar'
 import { Footer } from '@/components/footer'
+import CommercialServicesPage from '@/components/Services Pages/commercial-properties'
 
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        {/* Page content will go here */}
+  <CommercialServicesPage />
       </main>
       <Footer />
     </>
