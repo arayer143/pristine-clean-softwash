@@ -65,3 +65,5 @@ export const logoImages: GalleryImage[] = [
   { src: "/pristinelogo-no-bg.jpg", alt: "Pristine Clean logo without background", category: "Logo" },
   { src: "/pristinelogo-no-bg.webp", alt: "Pristine Clean logo without background webp", category: "Logo" },
 ];
+
+export type { GalleryVideo, GalleryImage };

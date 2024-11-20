@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import Navbar from '@/components/navbar'
 import { Footer } from '@/components/footer'
+import GalleryPage from '@/components/Gallery/gallery-page'
 
 
 export const metadata: Metadata = {
-  title: '',
-  description: '',
+  title: 'Gallery | Pristine Clean Soft Wash',
+  description: 'Explore our portfolio of successful cleaning projects, including before and after photos and videos.',
 }
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        {/* Page content will go here */}
+    <GalleryPage />
       </main>
       <Footer />
     </>
