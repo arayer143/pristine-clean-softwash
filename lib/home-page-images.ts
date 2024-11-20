@@ -40,7 +40,7 @@ export const homePageImages: GalleryImage[] = [
     category: 'Commercial',
   },
     {
-    src: '/public/fleet-2-after.webp',
+    src: '/fleet-2-after.webp',
     alt: 'Fleet Truck washing',
     category: 'Fleet Washing',
   },
