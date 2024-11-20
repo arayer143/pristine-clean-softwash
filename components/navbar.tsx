@@ -47,11 +47,11 @@ export default function Navbar() {
           <div className="flex-1 flex items-center justify-start">
             <Link href="/" className="flex items-center space-x-2">
               <Image 
-                src="/assets/img/pristinelogo-no-bg.webp" 
+                src="/pristinelogo-no-bg.webp" 
                 alt="Pristine Clean Soft Wash Logo" 
-                width={150} 
+                width={100} 
                 height={50} 
-                className="h-auto w-[150px] min-w-[150px]"
+                className="h-auto ml-7 w-[60px] min-w-[50px]"
               />
             </Link>
           </div>
