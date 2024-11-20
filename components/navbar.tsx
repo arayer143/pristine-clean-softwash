@@ -26,7 +26,7 @@ const services = [
   { title: 'Gutter Cleaning', href: '/services/gutter-cleaning' },
   { title: 'Fleet Cleaning', href: '/services/fleet-cleaning' },
   { title: 'Commercial Properties', href: '/services/commercial-properties' },
-  { title: 'Oxidation Removal', href: '/services/oxidation' },
+  { title: 'Oxidation Removal', href: '/services/oxidation-removal' },
 ]
 
 export default function Navbar() {
