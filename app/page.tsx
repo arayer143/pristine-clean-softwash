@@ -5,11 +5,12 @@ import { HeroSection } from '@/components/Home Page/hero'
 import Navbar from '@/components/navbar'
 import AboutSection from '@/components/Home Page/about-us'
 import ServicesSection from '@/components/Home Page/our-services'
-
+import { homePageImages } from '@/lib/home-page-images'
 import SectionWrapper from '@/components/section-wrapper'
 import WhyUsSection from '@/components/Home Page/why-us-section'
 import BusinessSolutionsSection from '@/components/Home Page/business-solutions-section'
 import CTASection from '@/components/call-to-action'
+import Gallery from '@/components/Gallery/gallery-section'
 
 
 export const metadata: Metadata = {
@@ -54,6 +55,14 @@ export default function Home() {
       <SectionWrapper colorScheme="primary">
       <BusinessSolutionsSection />
       </SectionWrapper>
+
+      <SectionWrapper colorScheme="secondary">
+      <Gallery 
+  images={homePageImages}
+  title="Our Services"
+  subtitle="See the difference we can make"
+/>
+          </SectionWrapper>
    
 
       </main>
