@@ -37,7 +37,7 @@ const services = [
   {
     title: 'Deck & Fence Restoration',
     description: 'Revitalize your outdoor living spaces and wooden structures.',
-    icon: '🌳',
+    icon: '🏡',
   },
   {
     title: 'Concrete Cleaning',

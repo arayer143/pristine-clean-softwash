@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import Link from 'next/link'
 
 export function HeroSection() {
   return (
     <section className="relative h-[80vh] overflow-hidden">
       <Image
-        src="/pristinecleanbanner.jpg"
+        src="/pristinecleanbanner.webp"
         alt="Pressure washing in action"
         fill
         className="object-cover"
@@ -14,7 +15,7 @@ export function HeroSection() {
       />
       <div className="absolute inset-0 bg-black bg-opacity-50" />
       <div className="relative z-10 h-full flex items-center justify-center">
-        <Card className="w-full max-w-3xl mx-4 bg-background/80 backdrop-blur-sm">
+        <Card className="w-full max-w-3xl mx-4 bg-background/50 backdrop-blur-sm">
           <CardContent className="p-6 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
               Pristine Clean Soft Wash
@@ -23,12 +24,16 @@ export function HeroSection() {
               Transform Your Property with Our Expert Pressure Washing Services
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="w-full sm:w-auto">
-                Get a Free Quote
-              </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                Our Services
-              </Button>
+              <Link href="/contact">
+                <Button size="lg" className="w-full sm:w-auto">
+                  Get a Free Quote
+                </Button>
+              </Link>
+              <Link href="/services/all-services">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                  Our Services
+                </Button>
+              </Link>
             </div>
           </CardContent>
         </Card>
