@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Droplet, Home, Hexagon, Heart, Shield, ThumbsUp } from 'lucide-react'
@@ -29,17 +30,20 @@ const services = [
   {
     icon: Droplet,
     title: "Soft & Pressure Wash",
-    description: "Professional Soft and Pressure Washing Services for your home or business."
+    description: "Professional Soft and Pressure Washing Services for your home or business.",
+    image: "/house2-bforeandafter.webp"
   },
   {
     icon: Home,
     title: "Roof Washing",
-    description: "Specialized soft wash cleaning to remove algae, mold, mildew, lichen, and moss from roofing materials."
+    description: "Specialized soft wash cleaning to remove algae, mold, mildew, lichen, and moss from roofing materials.",
+    image: "/roof-3-beforeandafter.webp"
   },
   {
     icon: Hexagon,
     title: "Concrete Washing",
-    description: "Revitalize the appearance of concrete surfaces by removing organics and stubborn stains."
+    description: "Revitalize the appearance of concrete surfaces by removing organics and stubborn stains.",
+    image: "/sidewalk-3-beforeandafter.webp"
   }
 ]
 
@@ -106,7 +110,7 @@ const WhyUsSection = () => {
             transition={{ duration: 0.5 }}
           >
             <SectionTitle 
-              title="Featured Services Services"
+              title="Featured Services"
               as="h3"
               className="mb-1"
             />
@@ -114,7 +118,7 @@ const WhyUsSection = () => {
               {services.map((service, index) => (
                 <motion.div
                   key={index}
-                  className="absolute inset-0 flex items-center justify-center p-8"
+                  className="absolute inset-0 flex items-center justify-center"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ 
                     opacity: activeService === index ? 1 : 0,
@@ -123,17 +127,25 @@ const WhyUsSection = () => {
                   }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Card className="w-full h-full flex flex-col items-center justify-center text-center">
-                    <CardHeader>
+                  <Card className="w-full h-full flex flex-col items-center justify-center text-center relative overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="absolute inset-0 z-0"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-50 z-10" />
+                    <CardHeader className="relative z-20">
                       <div className="w-full flex justify-center mb-4">
                         <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
                           <service.icon className="w-8 h-8 text-primary-foreground" />
                         </div>
                       </div>
-                      <CardTitle className="text-2xl mb-4">{service.title}</CardTitle>
+                      <CardTitle className="text-2xl mb-4 text-white">{service.title}</CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">{service.description}</p>
+                    <CardContent className="relative z-20">
+                      <p className="text-white">{service.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
