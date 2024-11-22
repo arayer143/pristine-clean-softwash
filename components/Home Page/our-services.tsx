@@ -8,14 +8,14 @@ import { Button } from "@/components/ui/button"
 import { Droplet, Home, Hexagon, Truck } from 'lucide-react'
 
 const services = [
-  { title: "Soft and Pressure Washing", icon: Droplet, href: "soft-and-pressure-washing" },
-  { title: "Commercial Property Washing", icon: Home, href: "commercial" },
-  { title: "Roof Washing", icon: Home, href: "roof-washing" },
-  { title: "Concrete Washing", icon: Hexagon, href: "concrete-washing" },
-  { title: "Gutter Cleaning & Brightening", icon: Home, href: "gutter-cleaning" },
-  { title: "Deck Washing & Restoration", icon: Hexagon, href: "concrete-washing" },
-  { title: "Oxidation Removal", icon: Droplet, href: "oxidation" },
-  { title: "Fleet Washing", icon: Truck, href: "fleet-cleaning" },
+  { title: "Soft and Pressure Washing", icon: Droplet, href: "/services/soft-and-pressure-washing" },
+  { title: "Commercial Property Washing", icon: Home, href: "/services/commercial-properties" },
+  { title: "Roof Washing", icon: Home, href: "/services/roof-washing" },
+  { title: "Concrete Washing", icon: Hexagon, href: "/services/concrete-washing" },
+  { title: "Gutter Cleaning & Brightening", icon: Home, href: "/services/gutter-cleaning" },
+  { title: "Deck Washing & Restoration", icon: Hexagon, href: "/services/concrete-washing" },
+  { title: "Oxidation Removal", icon: Droplet, href: "/services/oxidation" },
+  { title: "Fleet Washing", icon: Truck, href: "/services/fleet-cleaning" },
 ]
 
 const containerVariants = {

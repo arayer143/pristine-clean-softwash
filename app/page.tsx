@@ -12,6 +12,7 @@ import BusinessSolutionsSection from '@/components/Home Page/business-solutions-
 import CTASection from '@/components/call-to-action'
 import Gallery from '@/components/Gallery/gallery-section'
 import ValuesAndServiceArea from '@/components/Home Page/values-and-service-area'
+import Testimonials from '@/components/Home Page/testimonials.section'
 
 
 export const metadata: Metadata = {
@@ -68,7 +69,11 @@ export default function Home() {
   subtitle="See the difference we can make"
 />
           </SectionWrapper>
-   
+          
+
+          <SectionWrapper colorScheme="secondary">
+      <Testimonials />
+      </SectionWrapper>
 
       </main>
       <Footer />
