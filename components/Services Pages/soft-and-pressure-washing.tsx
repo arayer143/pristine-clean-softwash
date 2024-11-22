@@ -81,7 +81,7 @@ export default function SoftAndPressureWashPage() {
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/house2-bforeandafter.webp"
                 alt="Soft Washing in Action"
                 width={600}
                 height={400}

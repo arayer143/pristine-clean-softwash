@@ -72,7 +72,7 @@ export default function FleetWashingPage() {
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
               <Image
-                src="/assets/img/fleet-washing.webp"
+                src="/fleet-washing.webp"
                 alt="Fleet Washing in Action"
                 width={600}
                 height={400}

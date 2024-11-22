@@ -69,7 +69,7 @@ export default function ConcreteWashingPage() {
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/concrete-beforeandafter.webp"
                 alt="Concrete Pressure Washing in Action"
                 width={600}
                 height={400}

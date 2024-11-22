@@ -64,7 +64,7 @@ export default function GutterCleaningPage() {
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/gutter-3-beforeandafter.webp"
                 alt="Gutter Cleaning in Action"
                 width={600}
                 height={400}

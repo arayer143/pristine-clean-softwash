@@ -64,7 +64,7 @@ export default function CommercialServicesPage() {
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
               <Image
-                src="/commercial-pressure-washing.jpg"
+                src="/staff-photo-pristineclean-2.webp"
                 alt="Commercial Pressure Washing in Action"
                 width={600}
                 height={400}
