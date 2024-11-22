@@ -95,7 +95,7 @@ export default function ServicesSection() {
               </CardHeader>
               <CardContent className="w-full p-4">
                 <Button asChild variant="outline" className="w-full transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
-                  <Link href={`/${service.href}`}>Learn More</Link>
+                  <Link href={`${service.href}`}>Learn More</Link>
                 </Button>
               </CardContent>
             </Card>
