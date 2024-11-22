@@ -52,15 +52,15 @@ export function Footer() {
             <h2 className="mb-6 text-sm font-semibold text-primary uppercase">Contact Us</h2>
             <div className="space-y-4">
               <Button variant="outline" className="w-full justify-start" asChild>
-                <a href="tel:+11234567890">
+                <a href="tel:9852329914">
                   <PhoneCall className="mr-2 h-4 w-4" />
-                  (123) 456-7890
+                  Call Us
                 </a>
               </Button>
               <Button variant="outline" className="w-full justify-start" asChild>
-                <a href="mailto:info@pristineclean.com">
+                <a href="Pristinecleansoftwashllc@gmail.com">
                   <Mail className="mr-2 h-4 w-4" />
-                  info@pristineclean.com
+                  Email Us
                 </a>
               </Button>
             </div>

@@ -7,11 +7,7 @@ export const commercialImages: ServiceImage[] = [
     alt: 'Apartment building before and after cleaning',
     category: 'commercial'
   },
-  {
-    src: '/backalley-beforeandafter.webp',
-    alt: 'Back alley before and after cleaning',
-    category: 'commercial'
-  },
+
   {
     src: '/bank-beforeandafter.webp',
     alt: 'Bank building before and after cleaning',

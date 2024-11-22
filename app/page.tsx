@@ -11,6 +11,7 @@ import WhyUsSection from '@/components/Home Page/why-us-section'
 import BusinessSolutionsSection from '@/components/Home Page/business-solutions-section'
 import CTASection from '@/components/call-to-action'
 import Gallery from '@/components/Gallery/gallery-section'
+import ValuesAndServiceArea from '@/components/Home Page/values-and-service-area'
 
 
 export const metadata: Metadata = {
@@ -57,6 +58,10 @@ export default function Home() {
       </SectionWrapper>
 
       <SectionWrapper colorScheme="secondary">
+      <ValuesAndServiceArea />
+      </SectionWrapper>
+
+      <SectionWrapper colorScheme="primary">
       <Gallery 
   images={homePageImages}
   title="Our Services"

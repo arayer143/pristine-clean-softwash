@@ -2,7 +2,6 @@ import { GalleryImage, GalleryVideo } from './gallery-section';
 
 export const galleryPageImages: GalleryImage[] = [
   { src: "/apartment-beforeandafter.webp", alt: "Before and after of apartment cleaning", category: "Commercial" },
-  { src: "/backalley-beforeandafter.webp", alt: "Before and after of back alley cleaning", category: "Commercial" },
   { src: "/bank-beforeandafter.webp", alt: "Before and after of bank cleaning", category: "Commercial" },
   { src: "/car-dealership-droneshot.jpg", alt: "Aerial view of car dealership cleaning", category: "Commercial" },
   { src: "/car-dealership-washing.jpg", alt: "Car dealership washing in progress", category: "Commercial" },
