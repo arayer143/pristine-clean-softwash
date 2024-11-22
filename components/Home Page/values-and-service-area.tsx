@@ -5,55 +5,89 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const beforeAfterImages = [
-  { before: "/prisitne-2-beforeandafter.webp", after: "/prisitne-2-beforeandafter.webp", alt: "Before and after exterior cleaning" },
-  { before: "/prisitne-3-beforeandafter.webp", after: "/prisitne-3-beforeandafter.webp", alt: "Before and after exterior cleaning" },
-  { before: "/siding-beforeandafter.webp", after: "/siding-beforeandafter.webp", alt: "Before and after siding cleaning" },
-  { before: "/house2-bforeandafter.webp", after: "/house2-bforeandafter.webp", alt: "Before and after house cleaning" },
+  { image: "/prisitne-2-beforeandafter.webp", alt: "Before and after exterior cleaning" },
+  { image: "/prisitne-3-beforeandafter.webp", alt: "Before and after exterior cleaning" },
+  { image: "/siding-beforeandafter.webp", alt: "Before and after siding cleaning" },
+  { image: "/house2-bforeandafter.webp", alt: "Before and after house cleaning" },
 ]
 
 const roofImages = [
-  { before: "/roof-before.webp", after: "/roof-after.webp", alt: "Before and after roof cleaning" },
-  { before: "/roof2-before.webp", after: "/roof2-after.webp", alt: "Before and after roof cleaning" },
+  { image: "/roof-before.webp", alt: "Before and after roof cleaning" },
+  { image: "/roof2-before.webp", alt: "Before and after roof cleaning" },
 ]
 
-const ImageCarousel = ({ images }: { images: { before: string; after: string; alt: string }[] }) => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [view, setView] = useState<'before' | 'after'>('before')
+interface ImageCarouselProps {
+  images: { image: string; alt: string }[]
+}
 
-  const nextImage = () => setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-  const prevImage = () => setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
+const ImageCarousel = ({ images }: ImageCarouselProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [direction, setDirection] = useState(0)
+
+  const nextImage = () => {
+    setDirection(1)
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+  }
+
+  const prevImage = () => {
+    setDirection(-1)
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
+  }
+
+  const slideVariants = {
+    hiddenRight: {
+      x: "100%",
+      opacity: 0,
+    },
+    hiddenLeft: {
+      x: "-100%",
+      opacity: 0,
+    },
+    visible: {
+      x: "0",
+      opacity: 1,
+      transition: {
+        type: "tween",
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.3,
+      transition: {
+        type: "tween",
+        duration: 0.1,
+        ease: "easeIn",
+      },
+    },
+  }
 
   return (
     <div className="relative">
       <div className="overflow-hidden rounded-lg">
-        <AnimatePresence initial={false}>
+        <AnimatePresence initial={false} custom={direction}>
           <motion.div
-            key={`${currentIndex}-${view}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            key={currentIndex}
+            custom={direction}
+            variants={slideVariants}
+            initial={direction > 0 ? "hiddenRight" : "hiddenLeft"}
+            animate="visible"
+            exit="exit"
             className="relative aspect-video"
           >
             <Image 
-              src={images[currentIndex][view]} 
-              alt={`${view} ${images[currentIndex].alt}`} 
+              src={images[currentIndex].image} 
+              alt={images[currentIndex].alt} 
               fill 
               className="object-cover"
             />
           </motion.div>
         </AnimatePresence>
       </div>
-      <Tabs value={view} onValueChange={(value) => setView(value as 'before' | 'after')} className="mt-2">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="before">Before</TabsTrigger>
-          <TabsTrigger value="after">After</TabsTrigger>
-        </TabsList>
-      </Tabs>
       <Button 
         variant="outline" 
         size="icon" 
