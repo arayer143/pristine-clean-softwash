@@ -62,22 +62,7 @@ const AboutUs = () => {
               </Link>
             </Button>
           </div>
-          <div className="flex justify-center space-x-4">
-            <Button variant="outline" size="sm" asChild>
-              <Link href="https://www.google.com/maps/place/Pristine+Clean+Softwash,+LLC/@29.619036,-90.7294213,13.25z/data=!4m8!3m7!1s0x3ce2d718785aa69:0x353ce7095f70135!8m2!3d29.6300359!4d-90.7373839!9m1!1b1!16s%2Fg%2F11q3cykxpd?entry=ttu" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 488 512">
-                  <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
-                </svg>
-                Google Reviews
-              </Link>
-            </Button>
-            <Button variant="outline" size="sm" asChild>
-              <Link href="https://www.facebook.com/PristineCleanSoftwashLLC/reviews/" target="_blank" rel="noopener noreferrer">
-                <Facebook className="h-4 w-4 mr-2" />
-                Facebook Reviews
-              </Link>
-            </Button>
-          </div>
+
           <div className="flex justify-center space-x-4 w-full">
             <Button variant="default" size="sm" asChild>
               <Link href="tel:9852329914">
