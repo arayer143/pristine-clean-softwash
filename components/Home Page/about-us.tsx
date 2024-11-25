@@ -3,12 +3,14 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import ReactPlayer from 'react-player/lazy'
+import dynamic from 'next/dynamic'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Facebook, Instagram, Youtube, Play, Phone, Mail } from 'lucide-react'
 import SectionTitle from '../section-title'
+
+const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
 const AboutUs = () => {
   const [isPlaying, setIsPlaying] = useState(false)
