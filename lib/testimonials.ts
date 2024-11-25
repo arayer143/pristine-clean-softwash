@@ -1,4 +1,6 @@
 export interface Testimonial {
+    rating: number;
+    rating: any;
     name: string;
     comment: string;
     source: 'google' | 'facebook';
