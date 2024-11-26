@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Facebook, Instagram, Youtube, Play, Phone, Mail } from 'lucide-react'
+import { Play, Phone, Mail } from 'lucide-react'
 import SectionTitle from '../section-title'
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
@@ -42,26 +42,7 @@ const AboutUs = () => {
       </CardHeader>
       <CardContent>
         <div className="flex flex-col items-center space-y-6">
-          <div className="flex justify-center space-x-4 w-full">
-            <Button variant="outline" size="icon" asChild>
-              <Link href="https://www.facebook.com/PristineCleanSoftwashLLC" target="_blank" rel="noopener noreferrer">
-                <Facebook className="h-4 w-4" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-            </Button>
-            <Button variant="outline" size="icon" asChild>
-              <Link href="https://www.instagram.com/pristinecleansoftwash" target="_blank" rel="noopener noreferrer">
-                <Instagram className="h-4 w-4" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-            </Button>
-            <Button variant="outline" size="icon" asChild>
-              <Link href="https://www.youtube.com/@pristinecleansoftwash" target="_blank" rel="noopener noreferrer">
-                <Youtube className="h-4 w-4" />
-                <span className="sr-only">YouTube</span>
-              </Link>
-            </Button>
-          </div>
+
 
           <div className="flex justify-center space-x-4 w-full">
             <Button variant="default" size="sm" asChild>

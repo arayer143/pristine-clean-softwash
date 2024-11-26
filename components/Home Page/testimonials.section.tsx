@@ -7,6 +7,7 @@ import { testimonials, Testimonial } from '@/lib/testimonials'
 import { Star, Facebook, ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { motion, AnimatePresence } from 'framer-motion'
+
 import { useSwipeable } from 'react-swipeable'
 
 const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }) => (
