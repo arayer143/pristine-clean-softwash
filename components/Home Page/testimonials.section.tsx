@@ -7,19 +7,20 @@ import { testimonials, Testimonial } from '@/lib/testimonials'
 import { Star, Facebook, ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { motion, AnimatePresence } from 'framer-motion'
-
 import { useSwipeable } from 'react-swipeable'
 
 const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }) => (
   <Card className="w-full max-w-2xl mx-auto bg-primary/5 shadow-lg">
-    <CardContent className="p-6 relative">
-      <Quote className="absolute top-4 left-4 w-8 h-8 text-primary/20" />
+    <CardContent className="p-6 relative z-10">
+      <Quote className="absolute top-4 left-4 w-8 h-8 text-primary/20 z-0" aria-hidden="true" />
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-xl font-semibold text-primary">{testimonial.name}</h3>
         {testimonial.source === 'facebook' ? (
           <Facebook className="w-6 h-6 text-blue-600" aria-label="Facebook review" />
         ) : (
-          <img src="/google-logo.png" alt="Google review" className="w-6 h-6" />
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500" viewBox="0 0 488 512" aria-label="Google review">
+            <path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/>
+          </svg>
         )}
       </div>
       <p className="text-gray-700 mb-4 italic">&ldquo;{testimonial.comment}&rdquo;</p>
@@ -28,6 +29,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
           <Star 
             key={i} 
             className={`w-5 h-5 ${i < testimonial.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+            aria-hidden="true"
           />
         ))}
       </div>
@@ -35,7 +37,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
   </Card>
 )
 
-export default function Testimonials() {
+export default function TestimonialSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const goToPrevious = useCallback(() => {
@@ -80,16 +82,15 @@ export default function Testimonials() {
 
         <p className="text-center mb-12 text-gray-600">
           {testimonials.length}+ Reviews 
-          <span className="ml-2" aria-hidden="true">
+          <span className="ml-2" aria-label={`${testimonials.length} 5-star reviews`}>
             {Array.from({ length: 5 }, (_, i) => (
-              <Star key={i} className="inline w-4 h-4 text-yellow-400 fill-current" />
+              <Star key={i} className="inline w-4 h-4 text-yellow-400 fill-current" aria-hidden="true" />
             ))}
           </span>
         </p>
         <div 
           {...handlers}
           className="relative touch-pan-y"
-          role="region"
           aria-roledescription="carousel"
           aria-label="Customer testimonials"
         >
@@ -132,3 +133,4 @@ export default function Testimonials() {
     </section>
   )
 }
+
