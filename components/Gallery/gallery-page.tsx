@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
@@ -60,7 +61,7 @@ export default function GalleryPage() {
   }
 
   return (
-    <SectionWrapper colorScheme="secondary">
+    <SectionWrapper colorScheme="primary">
       <div className="container mx-auto px-4 py-16">
         <SectionTitle 
           title="Our Gallery"
@@ -190,7 +191,29 @@ export default function GalleryPage() {
             </motion.div>
           )}
         </AnimatePresence>
+        
       </div>
-    </SectionWrapper>
+    
+      <SectionWrapper colorScheme="secondary">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center">
+            <SectionTitle 
+              title="Ready to Transform Your Property?" 
+              subtitle="Schedule your cleaning service today"
+            />
+            <motion.div
+              className="mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <Button size="lg"><Link href="/contact">Get a Free Quote</Link></Button>
+            </motion.div>
+          </div>
+        </div>
+      </SectionWrapper>
+      </SectionWrapper>
+
+    
   )
 }
