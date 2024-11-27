@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import SectionWrapper from '@/components/section-wrapper'
 import SectionTitle from '@/components/section-title'
 import { Button } from '@/components/ui/button'
@@ -65,7 +66,7 @@ export default function RoofWashingPage() {
               <p className="text-lg mb-6 text-muted-foreground">
                 Your roof is one of the most important features of your home, responsible for protecting you and your family from the outdoor elements. While it has durable construction and materials to withstand weather, it requires care to maintain its integrity. Regular roof cleaning offers numerous benefits that protect your home and save you money in the long run.
               </p>
-              <Button size="lg">Schedule a Roof Cleaning</Button>
+              <Button size="lg"><Link href="/contact">Schedule a Roof Cleaning</Link></Button>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
               <Image
@@ -142,7 +143,7 @@ export default function RoofWashingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <Button size="lg">Get a Free Quote</Button>
+            <Button size="lg"><Link href="/contact">Get a Free Quote</Link></Button>
           </motion.div>
         </div>
       </SectionWrapper>

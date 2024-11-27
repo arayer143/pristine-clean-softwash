@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import SectionWrapper from '@/components/section-wrapper'
 import SectionTitle from '@/components/section-title'
 import { Button } from '@/components/ui/button'
@@ -60,7 +61,7 @@ export default function OxidationRemovalPage() {
               <p className="text-lg mb-6 text-muted-foreground">
                 Oxidation can significantly degrade the appearance and integrity of your property&apos;s surfaces. Our professional oxidation removal services can restore your property&apos;s look, protect it from further damage, and save you money in the long run.
               </p>
-              <Button size="lg">Schedule Oxidation Removal</Button>
+              <Button size="lg"><Link href="/contact">Schedule Oxidation Removal</Link></Button>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
               <Image
@@ -138,7 +139,7 @@ export default function OxidationRemovalPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <Button size="lg">Get a Free Quote</Button>
+            <Button size="lg"><Link href="/contact">Get a Free Quote</Link></Button>
           </motion.div>
         </div>
       </SectionWrapper>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import SectionWrapper from '@/components/section-wrapper'
 import SectionTitle from '@/components/section-title'
 import { Button } from '@/components/ui/button'
@@ -60,7 +61,7 @@ export default function CommercialServicesPage() {
               <p className="text-lg mb-6 text-muted-foreground">
                 Our professional pressure washing services enhance curb appeal, prevent damage, and ensure a safe, welcoming environment for your customers and employees. Don&apos;t let dirt, grime, and mildew diminish your property&apos;s value and appearance.
               </p>
-              <Button size="lg">Schedule a Consultation</Button>
+              <Button size="lg"><Link href="/contact">Schedule a Consultation</Link></Button>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
               <Image
@@ -137,7 +138,10 @@ export default function CommercialServicesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <Button size="lg">Get a Free Quote</Button>
+            <Button size="lg">   
+              <Link href="/contact">Get a Free Quote</Link>
+              </Button>
+
           </motion.div>
         </div>
       </SectionWrapper>

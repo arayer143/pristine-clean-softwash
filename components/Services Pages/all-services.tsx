@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { CheckCircle2 } from 'lucide-react'
 import SectionWrapper from '@/components/section-wrapper'
 import SectionTitle from '@/components/section-title'
@@ -191,7 +192,7 @@ export default function AllServicesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <Button size="lg">Get a Free Quote</Button>
+              <Button size="lg"><Link href="/contact">Get a Free Quote</Link></Button>
             </motion.div>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import SectionWrapper from '@/components/section-wrapper'
 import SectionTitle from '@/components/section-title'
 import { Button } from '@/components/ui/button'
@@ -77,7 +78,7 @@ export default function SoftAndPressureWashPage() {
               <p className="text-lg mb-6 text-muted-foreground">
                 With the soft wash system, a house with vinyl or aluminum siding can remain clean for a minimum of three years.
               </p>
-              <Button size="lg">Schedule a Consultation</Button>
+              <Button size="lg"><Link href="/contact">Schedule a Consultation</Link></Button>
             </motion.div>
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
               <Image
@@ -149,7 +150,7 @@ export default function SoftAndPressureWashPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <Button size="lg">Get a Free Quote</Button>
+            <Button size="lg"><Link href="/contact">Get a Free Quote</Link></Button>
           </motion.div>
         </div>
       </SectionWrapper>
