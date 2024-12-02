@@ -2,10 +2,9 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const beforeAfterImages = [
   { image: "/prisitne-2-beforeandafter.webp", alt: "Before and after exterior cleaning" },
@@ -19,93 +18,45 @@ const roofImages = [
   { image: "/roof2-before.webp", alt: "Before and after roof cleaning" },
 ]
 
-interface ImageCarouselProps {
+interface ImageGalleryProps {
   images: { image: string; alt: string }[]
 }
 
-const ImageCarousel = ({ images }: ImageCarouselProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [direction, setDirection] = useState(0)
-
-  const nextImage = () => {
-    setDirection(1)
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-  }
-
-  const prevImage = () => {
-    setDirection(-1)
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
-  }
-
-  const slideVariants = {
-    hiddenRight: {
-      x: "100%",
-      opacity: 0,
-    },
-    hiddenLeft: {
-      x: "-100%",
-      opacity: 0,
-    },
-    visible: {
-      x: "0",
-      opacity: 1,
-      transition: {
-        type: "tween",
-        duration: 0.5,
-        ease: "easeInOut",
-      },
-    },
-    exit: {
-      opacity: 0,
-      scale: 0.3,
-      transition: {
-        type: "tween",
-        duration: 0.1,
-        ease: "easeIn",
-      },
-    },
-  }
+const ImageGallery = ({ images }: ImageGalleryProps) => {
+  const [selectedIndex, setSelectedIndex] = useState(0)
 
   return (
-    <div className="relative">
-      <div className="overflow-hidden rounded-lg">
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.div
-            key={currentIndex}
-            custom={direction}
-            variants={slideVariants}
-            initial={direction > 0 ? "hiddenRight" : "hiddenLeft"}
-            animate="visible"
-            exit="exit"
-            className="relative aspect-video"
+    <div className="space-y-4">
+      <div className="relative aspect-video overflow-hidden rounded-lg">
+        <Image 
+          src={images[selectedIndex].image} 
+          alt={images[selectedIndex].alt} 
+          fill 
+          className="object-cover"
+        />
+      </div>
+      <div className="flex space-x-2 overflow-x-auto pb-2">
+        {images.map((image, index) => (
+          <Button
+            key={image.image}
+            variant={selectedIndex === index ? "default" : "outline"}
+            size="sm"
+            className="p-1 h-auto"
+            onClick={() => setSelectedIndex(index)}
           >
             <Image 
-              src={images[currentIndex].image} 
-              alt={images[currentIndex].alt} 
-              fill 
-              className="object-cover"
+              src={image.image} 
+              alt={`Thumbnail ${index + 1}`} 
+              width={60} 
+              height={60} 
+              className="rounded-sm object-cover"
             />
-          </motion.div>
-        </AnimatePresence>
+            <span className="sr-only">
+              {selectedIndex === index ? `Current image: ${image.alt}` : `View image: ${image.alt}`}
+            </span>
+          </Button>
+        ))}
       </div>
-      <Button 
-        variant="outline" 
-        size="icon" 
-        className="absolute top-1/2 left-2 transform -translate-y-1/2" 
-        onClick={prevImage}
-        aria-label="Previous image"
-      >
-        <ChevronLeft className="h-4 w-4" />
-      </Button>
-      <Button 
-        variant="outline" 
-        size="icon" 
-        className="absolute top-1/2 right-2 transform -translate-y-1/2" 
-        onClick={nextImage}
-        aria-label="Next image"
-      >
-        <ChevronRight className="h-4 w-4" />
-      </Button>
     </div>
   )
 }
@@ -124,27 +75,27 @@ export default function ValuesAndServiceArea() {
             Our Services
           </motion.h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="overflow-hidden">
+            <Card>
               <CardHeader className="bg-primary text-primary-foreground">
                 <CardTitle className="text-2xl">Exterior Cleaning</CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
-                <h4 className="text-xl font-semibold mb-4">Could your home, camp, business, parking lot, etc use an exterior cleaning?</h4>
-                <p className="mb-4">We Can Help!</p>
-                <p className="mb-6">We serve all areas from the North Shore, New Orleans, Baton Rouge, Lafayette, and anywhere in between! We&apos;ve got you covered!</p>
-                <ImageCarousel images={beforeAfterImages} />
+              <CardContent className="p-6 space-y-4">
+                <h4 className="text-xl font-semibold">Could your home, camp, business, parking lot, etc use an exterior cleaning?</h4>
+                <p>We Can Help!</p>
+                <p>We serve all areas from the North Shore, New Orleans, Baton Rouge, Lafayette, and anywhere in between! We&apos;ve got you covered!</p>
+                <ImageGallery images={beforeAfterImages} />
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden">
+            <Card>
               <CardHeader className="bg-primary text-primary-foreground">
                 <CardTitle className="text-2xl">Roof Washing</CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
-                <h4 className="text-xl font-semibold mb-4">Why should you have your roof soft-washed?</h4>
-                <p className="mb-4">&quot;It can double your roof&apos;s lifespan. By having your roof cleaned, you can extend its life expectancy by up to twice its remaining life.&quot;</p>
-                <p className="mb-6">&quot;Keeping the roof tidy and free of dirt and debris is also a great way to improve curb appeal.&quot;</p>
-                <ImageCarousel images={roofImages} />
+              <CardContent className="p-6 space-y-4">
+                <h4 className="text-xl font-semibold">Why should you have your roof soft-washed?</h4>
+                <p>&quot;It can double your roof&apos;s lifespan. By having your roof cleaned, you can extend its life expectancy by up to twice its remaining life.&quot;</p>
+                <p>&quot;Keeping the roof tidy and free of dirt and debris is also a great way to improve curb appeal.&quot;</p>
+                <ImageGallery images={roofImages} />
               </CardContent>
             </Card>
           </div>
