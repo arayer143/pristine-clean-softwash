@@ -34,7 +34,6 @@ export const galleryPageImages: GalleryImage[] = [
   { src: "/roof-4-beforeandafter.webp", alt: "Before and after of roof cleaning", category: "Roof Cleaning" },
   { src: "/roof-5-beforeandafter.webp", alt: "Before and after of roof cleaning", category: "Roof Cleaning" },
   { src: "/roof-halfandhalf.webp", alt: "Half cleaned roof comparison", category: "Roof Cleaning" },
-  { src: "/school-concrete-beforeandafter.webp", alt: "Before and after of school concrete cleaning", category: "Concrete Cleaning" },
   { src: "/sidewalk-2-beforeandafter.webp", alt: "Before and after of sidewalk cleaning", category: "Concrete Cleaning" },
   { src: "/sidewalk-3-beforeandafter.webp", alt: "Before and after of sidewalk cleaning", category: "Concrete Cleaning" },
   { src: "/sidewalk-beforeandafter.webp", alt: "Before and after of sidewalk cleaning", category: "Concrete Cleaning" },
@@ -54,15 +53,8 @@ export const teamPhotos: GalleryImage[] = [
   { src: "/staff-photo-pristineclean-3.webp", alt: "Pristine Clean staff photo 3", category: "Team" },
 ];
 
-export const bannerImages: GalleryImage[] = [
-  { src: "/big-banner-image.jpg", alt: "Pristine Clean big banner", category: "Banner" },
-  { src: "/pristinecleanbanner.jpg", alt: "Pristine Clean banner", category: "Banner" },
-  { src: "/pristinecleanbanner.webp", alt: "Pristine Clean banner webp", category: "Banner" },
-];
 
-export const logoImages: GalleryImage[] = [
-  { src: "/pristinelogo-no-bg.jpg", alt: "Pristine Clean logo without background", category: "Logo" },
-  { src: "/pristinelogo-no-bg.webp", alt: "Pristine Clean logo without background webp", category: "Logo" },
-];
+
+
 
 export type { GalleryVideo, GalleryImage };

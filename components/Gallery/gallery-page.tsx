@@ -9,17 +9,15 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import SectionWrapper from '@/components/section-wrapper'
 import SectionTitle from '@/components/section-title'
-import { galleryPageImages, galleryPageVideos, teamPhotos, bannerImages, logoImages, GalleryImage, GalleryVideo } from '@/lib/gallery-page'
+import { galleryPageImages, galleryPageVideos, GalleryImage, GalleryVideo } from '@/lib/gallery-page'
 
 type GalleryItem = GalleryImage | GalleryVideo
 
-type TabValue = 'all' | 'before-after' | 'commercial' | 'residential' | 'concrete' | 'roof' | 'gutter' | 'fleet' | 'oxidation' | 'team' | 'banner' | 'logo' | 'video'
+type TabValue = 'all' | 'before-after' | 'commercial' | 'residential' | 'concrete' | 'roof' | 'gutter' | 'fleet' | 'oxidation' | 'video'
 
 const allGalleryItems: GalleryItem[] = [
   ...galleryPageImages,
-  ...teamPhotos,
-  ...bannerImages,
-  ...logoImages
+
 ]
 
 const videoThumbnails: GalleryImage[] = galleryPageVideos.map(video => ({
@@ -79,9 +77,6 @@ export default function GalleryPage() {
             <TabsTrigger value="gutter">Gutter</TabsTrigger>
             <TabsTrigger value="fleet">Fleet</TabsTrigger>
             <TabsTrigger value="oxidation">Oxidation</TabsTrigger>
-            <TabsTrigger value="team">Team</TabsTrigger>
-            <TabsTrigger value="banner">Banner</TabsTrigger>
-            <TabsTrigger value="logo">Logo</TabsTrigger>
             <TabsTrigger value="video">Videos</TabsTrigger>
           </TabsList>
 

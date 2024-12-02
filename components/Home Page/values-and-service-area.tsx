@@ -11,6 +11,7 @@ const beforeAfterImages = [
   { image: "/prisitne-3-beforeandafter.webp", alt: "Before and after exterior cleaning" },
   { image: "/siding-beforeandafter.webp", alt: "Before and after siding cleaning" },
   { image: "/house2-bforeandafter.webp", alt: "Before and after house cleaning" },
+  { image: "/sidewalk-3-beforeandafter.webp", alt: "Before and after sidewalk cleaning" },
 ]
 
 const roofImages = [
@@ -32,7 +33,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
           src={images[selectedIndex].image} 
           alt={images[selectedIndex].alt} 
           fill 
-          className="object-cover"
+          style={{ objectFit: 'cover' }}
         />
       </div>
       <div className="flex space-x-2 overflow-x-auto pb-2">
@@ -49,7 +50,8 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
               alt={`Thumbnail ${index + 1}`} 
               width={60} 
               height={60} 
-              className="rounded-sm object-cover"
+              className="rounded-sm"
+              style={{ objectFit: 'cover' }}
             />
             <span className="sr-only">
               {selectedIndex === index ? `Current image: ${image.alt}` : `View image: ${image.alt}`}
