@@ -9,11 +9,23 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { Phone, Mail, Facebook, Instagram } from 'lucide-react'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import SectionTitle from './section-title'
+
+const services = [
+  "Soft and Pressure Washing",
+  "Concrete Washing",
+  "Roof Washing",
+  "Commercial Properties",
+  "Fleet Cleaning",
+  "Gutter Cleaning",
+  "Oxidation Removal"
+]
 
 export default function ContactForm() {
   const form = useRef<HTMLFormElement>(null)
   const [status, setStatus] = useState('')
+  const [selectedService, setSelectedService] = useState('')
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -29,6 +41,7 @@ export default function ContactForm() {
           console.log(result.text)
           setStatus('Message sent successfully!')
           if (form.current) form.current.reset()
+          setSelectedService('')
         }, (error) => {
           console.log(error.text)
           setStatus('Failed to send message. Please try again.')
@@ -79,6 +92,21 @@ export default function ContactForm() {
                   </div>
                 </div>
                 <div className="space-y-2">
+                  <Label htmlFor="service">Service</Label>
+                  <Select name="service" value={selectedService} onValueChange={setSelectedService}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a service" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {services.map((service) => (
+                        <SelectItem key={service} value={service}>
+                          {service}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea name="message" id="message" placeholder="Your message here..." required />
                 </div>
@@ -125,7 +153,7 @@ export default function ContactForm() {
                       <Facebook className="h-6 w-6" />
                       <span className="sr-only">Facebook</span>
                     </a>
-        
+  
                     <a href="https://www.instagram.com/pristinecleanswllc/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                       <Instagram className="h-6 w-6" />
                       <span className="sr-only">Instagram</span>
