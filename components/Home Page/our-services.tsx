@@ -41,7 +41,7 @@ const services = [
   { 
     title: "Deck Washing & Restoration", 
     icon: Hexagon, 
-    href: "/services/deck-washing",
+    href: "/services/soft-and-pressure-washing",
     description: "Revitalize your outdoor living spaces with our thorough deck cleaning and restoration services."
   },
   { 
