@@ -22,7 +22,8 @@ export default function ContactForm() {
       emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
-        form.current
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
       )
         .then((result) => {
           console.log(result.text)
@@ -38,7 +39,7 @@ export default function ContactForm() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
       <div className="w-full max-w-4xl">
-      <SectionTitle 
+        <SectionTitle 
           title="Contact Us today!"
           subtitle="Fill out our contact section or reach out to us today!."
         />
@@ -124,7 +125,7 @@ export default function ContactForm() {
                       <Facebook className="h-6 w-6" />
                       <span className="sr-only">Facebook</span>
                     </a>
-               
+        
                     <a href="https://www.instagram.com/pristinecleanswllc/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                       <Instagram className="h-6 w-6" />
                       <span className="sr-only">Instagram</span>
