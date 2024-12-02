@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Play, Phone, Mail } from 'lucide-react'
+import { Play, Phone, Mail, Facebook, Instagram} from 'lucide-react'
 import SectionTitle from '../section-title'
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
@@ -43,6 +43,17 @@ const AboutUs = () => {
       <CardContent>
         <div className="flex flex-col items-center space-y-6">
 
+        <div className="flex justify-center space-x-4">
+                    <a href="https://www.facebook.com/PristineCleanSoftwashLLC/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                      <Facebook className="h-6 w-6" />
+                      <span className="sr-only">Facebook</span>
+                    </a>
+               
+                    <a href="https://www.instagram.com/pristinecleanswllc/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                      <Instagram className="h-6 w-6" />
+                      <span className="sr-only">Instagram</span>
+                    </a>
+                  </div>
 
           <div className="flex justify-center space-x-4 w-full">
             <Button variant="default" size="sm" asChild>

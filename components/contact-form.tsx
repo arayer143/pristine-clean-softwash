@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { Phone, Mail, Facebook, Twitter, Instagram } from 'lucide-react'
+import { Phone, Mail, Facebook, Instagram } from 'lucide-react'
 import SectionTitle from './section-title'
 
 export default function ContactForm() {
@@ -120,15 +120,12 @@ export default function ContactForm() {
                 <div>
                   <h3 className="text-sm text-center font-medium mb-2">Follow us</h3>
                   <div className="flex justify-center space-x-4">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                    <a href="https://www.facebook.com/PristineCleanSoftwashLLC/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                       <Facebook className="h-6 w-6" />
                       <span className="sr-only">Facebook</span>
                     </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-                      <Twitter className="h-6 w-6" />
-                      <span className="sr-only">Twitter</span>
-                    </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+               
+                    <a href="https://www.instagram.com/pristinecleanswllc/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                       <Instagram className="h-6 w-6" />
                       <span className="sr-only">Instagram</span>
                     </a>

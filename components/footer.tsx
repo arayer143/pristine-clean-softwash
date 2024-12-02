@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { PhoneCall, Mail, Facebook, Instagram, TwitterIcon as TikTok, Globe } from 'lucide-react'
+import { PhoneCall, Mail, Facebook, Instagram, Globe } from 'lucide-react'
 
 const quickLinks = [
   { name: 'Home', href: '/' },
@@ -20,9 +20,9 @@ const services = [
 ]
 
 const socialLinks = [
-  { name: 'Facebook', href: 'https://www.facebook.com/pristinecleansoftwash', icon: Facebook },
-  { name: 'Instagram', href: 'https://www.instagram.com/pristinecleansoftwash', icon: Instagram },
-  { name: 'TikTok', href: 'https://www.tiktok.com/@pristinecleansoftwash', icon: TikTok },
+  { name: 'Facebook', href: 'https://www.facebook.com/PristineCleanSoftwashLLC/', icon: Facebook },
+  { name: 'Instagram', href: 'https://www.instagram.com/pristinecleanswllc/', icon: Instagram },
+
 ]
 
 export function Footer() {
