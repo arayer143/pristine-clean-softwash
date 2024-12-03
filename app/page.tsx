@@ -13,6 +13,7 @@ import CTASection from '@/components/call-to-action'
 import Gallery from '@/components/Gallery/gallery-section'
 import ValuesAndServiceArea from '@/components/Home Page/values-and-service-area'
 import Testimonials from '@/components/Home Page/testimonials.section'
+import { CookieConsentPopup } from '@/components/cookie-consent-popup'
 
 export const metadata: Metadata = {
   title: 'Pristine Clean Soft Wash | Professional Pressure Washing Services',
@@ -46,15 +47,25 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
+
       <Navbar />
+
+
+
       <main className="flex-grow">
         <HeroSection />
+        
         <SectionWrapper colorScheme="primary">
           <AboutSection />
+
         </SectionWrapper>
+
         <SectionWrapper colorScheme="secondary">
           <ServicesSection />
+
         </SectionWrapper>
+
+
         <SectionWrapper colorScheme="primary">
           <CTASection 
             title="Ready to Experience the Pristine Clean Difference?"
@@ -63,15 +74,23 @@ export default function Home() {
             buttonLink="/contact"
           />
         </SectionWrapper>
+
+
         <SectionWrapper colorScheme="secondary">
           <WhyUsSection />
         </SectionWrapper>
+
+
         <SectionWrapper colorScheme="primary">
           <BusinessSolutionsSection />
         </SectionWrapper>
+
+
         <SectionWrapper colorScheme="secondary">
           <ValuesAndServiceArea />
         </SectionWrapper>
+
+
         <SectionWrapper colorScheme="primary">
           <Gallery 
             images={homePageImages}
@@ -79,11 +98,23 @@ export default function Home() {
             subtitle="See the difference we can make"
           />
         </SectionWrapper>
+
+
         <SectionWrapper colorScheme="secondary">
           <Testimonials />
         </SectionWrapper>
+
+
       </main>
+
+
+
+
       <Footer />
+
+
+<CookieConsentPopup />
+
     </div>
   )
 }
