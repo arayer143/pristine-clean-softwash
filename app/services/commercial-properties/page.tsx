@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'Commercial Pressure Washing Services | Pristine Clean Soft Wash',
     description: 'Professional commercial pressure washing services for businesses. Enhance your property&apos;s appearance with Pristine Clean Soft Wash.',
     type: 'website',
-    url: 'https://pristinecleansoftwash.com/services/commercial-services',
+    url: 'https://www.pristinecleansoftwash.com/services/commercial-properties',
     images: [
       {
         url: '/big-banner-image.webp',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: ['/big-banner-image.webp'],
   },
   alternates: {
-    canonical: 'https://pristinecleansoftwash.com/services/commercial-services',
+    canonical: 'https://www.pristinecleansoftwash.com/services/commercial-properties',
   },
 }
 
