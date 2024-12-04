@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'Expert Fleet Washing Services | Pristine Clean Soft Wash',
     description: 'Professional fleet washing services by Pristine Clean Soft Wash. Keep your vehicles clean, maintained, and representing your business at its best.',
     type: 'website',
-    url: 'https://pristinecleansoftwash.com/services/fleet-washing',
+    url: 'https://pristinecleansoftwash.com/services/fleet-cleaning',
     images: [
       {
         url: '/big-banner-image.webp',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: ['/big-banner-image.webp'],
   },
   alternates: {
-    canonical: 'https://pristinecleansoftwash.com/services/fleet-washing',
+    canonical: 'https://pristinecleansoftwash.com/services/fleet-cleaning',
   },
 }
 

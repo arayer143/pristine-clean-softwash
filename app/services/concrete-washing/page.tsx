@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from '@/components/navbar'
 import { Footer } from '@/components/footer'
-import ConcreteWashingPage from '@/components/Services Pages/concrete-wasing'
+import ConcreteWashingPage from '@/components/Services Pages/concrete-washing'
 
 export const metadata: Metadata = {
   title: 'Concrete Cleaning Services | Pristine Clean Soft Wash',
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'Professional Concrete Cleaning | Pristine Clean Soft Wash',
     description: 'Expert concrete cleaning services by Pristine Clean Soft Wash. Restore your driveways, patios, and walkways to their original beauty.',
     type: 'website',
-    url: 'https://pristinecleansoftwash.com/services/concrete-cleaning',
+    url: 'https://pristinecleansoftwash.com/services/concrete-washing',
     images: [
       {
         url: '/big-banner-image.webp',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     images: ['/big-banner-image.webp'],
   },
   alternates: {
-    canonical: 'https://pristinecleansoftwash.com/services/concrete-cleaning',
+    canonical: 'https://pristinecleansoftwash.com/services/concrete-washing',
   },
 }
 
