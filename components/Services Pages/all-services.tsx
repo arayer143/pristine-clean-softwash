@@ -13,6 +13,21 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 const services = [
   {
@@ -77,27 +92,33 @@ const benefits = [
 const reasons = [
   {
     title: 'Experienced and certified technicians',
-    description: 'Our team undergoes rigorous training and stays updated with the latest industry standards.'
+    description: 'Our team undergoes rigorous training and stays updated with the latest industry standards.',
+    icon: '👨‍🔧'
   },
   {
     title: 'Eco-friendly cleaning solutions',
-    description: 'We use environmentally responsible products that are tough on dirt but gentle on your property and the planet.'
+    description: 'We use environmentally responsible products that are tough on dirt but gentle on your property and the planet.',
+    icon: '🌿'
   },
   {
     title: 'State-of-the-art equipment',
-    description: 'Our advanced tools ensure efficient and effective cleaning for all types of surfaces.'
+    description: 'Our advanced tools ensure efficient and effective cleaning for all types of surfaces.',
+    icon: '🔧'
   },
   {
     title: 'Customized cleaning plans',
-    description: 'We tailor our services to meet the unique needs of your property, ensuring optimal results.'
+    description: 'We tailor our services to meet the unique needs of your property, ensuring optimal results.',
+    icon: '📋'
   },
   {
     title: 'Fully insured and bonded',
-    description: 'Your property is protected. We carry comprehensive insurance for your peace of mind.'
+    description: 'Your property is protected. We carry comprehensive insurance for your peace of mind.',
+    icon: '🛡️'
   },
   {
     title: 'Satisfaction guaranteed',
-    description: 'We\'re not happy unless you\'re happy. We stand behind the quality of our work.'
+    description: 'We\'re not happy unless you\'re happy. We stand behind the quality of our work.',
+    icon: '🤝'
   },
 ]
 
@@ -163,19 +184,30 @@ export default function AllServicesPage() {
             title="Why Choose Pristine Clean Soft Wash?" 
             subtitle="Experience the difference with our expert services"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-            {reasons.map((reason, index) => (
-              <motion.div
-                key={index}
-                className="bg-card text-card-foreground rounded-lg p-6 shadow-lg flex flex-col items-center text-center"
-                {...fadeInUp}
-                transition={{ delay: index * 0.1 }}
-              >
-                <h3 className="text-xl font-semibold mb-2">{reason.title}</h3>
-                <p className="text-muted-foreground">{reason.description}</p>
-              </motion.div>
-            ))}
-          </div>
+          <Carousel className="w-full mt-8">
+            <CarouselContent>
+              {reasons.map((reason, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-2">
+                          <span className="text-3xl">{reason.icon}</span>
+                          {reason.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription>{reason.description}</CardDescription>
+                      </CardContent>
+                 
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </SectionWrapper>
 
@@ -192,7 +224,9 @@ export default function AllServicesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <Button size="lg"><Link href="/contact">Get a Free Quote</Link></Button>
+              <Button size="lg" asChild>
+                <Link href="/contact">Get a Free Quote</Link>
+              </Button>
             </motion.div>
           </div>
         </div>
