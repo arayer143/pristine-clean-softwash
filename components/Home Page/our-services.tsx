@@ -47,7 +47,7 @@ const services = [
   { 
     title: "Oxidation Removal", 
     icon: Droplet, 
-    href: "/services/oxidation",
+    href: "/services/oxidation-removal",
     description: "Eliminate stubborn oxidation stains from various surfaces to restore their original luster."
   },
   { 
