@@ -60,6 +60,7 @@ export default function FleetWashingPage() {
           <SectionTitle 
             title="Fleet Washing Services"
             subtitle="Let Pristine Clean wash your Fleet Today!"
+             as="h1"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
             <motion.div {...fadeInUp}>

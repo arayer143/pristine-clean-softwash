@@ -54,6 +54,7 @@ export default function OxidationRemovalPage() {
           <SectionTitle 
             title="Oxidation Removal Services"
             subtitle="Stop the Oxidation Process on Your Property Today!"
+             as="h1"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
             <motion.div {...fadeInUp}>

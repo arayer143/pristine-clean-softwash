@@ -54,10 +54,11 @@ export default function CommercialServicesPage() {
           <SectionTitle 
             title="Commercial Pressure Washing Services"
             subtitle="Revitalize Your Business&apos;s Exterior"
+            as="h1"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
             <motion.div {...fadeInUp}>
-              <h2 className="text-3xl font-bold mb-4">Transform Your Property&apos;s Appearance</h2>
+              <h1 className="text-3xl font-bold mb-4">Transform Your Property&apos;s Appearance</h1>
               <p className="text-lg mb-6 text-muted-foreground">
                 Our professional pressure washing services enhance curb appeal, prevent damage, and ensure a safe, welcoming environment for your customers and employees. Don&apos;t let dirt, grime, and mildew diminish your property&apos;s value and appearance.
               </p>

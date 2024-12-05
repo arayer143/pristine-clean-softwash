@@ -64,6 +64,7 @@ export default function GalleryPage() {
         <SectionTitle 
           title="Our Gallery"
           subtitle="Explore our portfolio of successful cleaning projects"
+           as="h1"
         />
 
         <Tabs defaultValue="all" className="w-full mt-8" onValueChange={handleTabChange}>

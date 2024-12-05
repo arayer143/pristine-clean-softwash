@@ -59,6 +59,7 @@ export default function ConcreteWashingPage() {
           <SectionTitle 
             title="Concrete Pressure Washing Services"
             subtitle="Revitalize Your Concrete Surfaces"
+             as="h1"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
             <motion.div {...fadeInUp}>

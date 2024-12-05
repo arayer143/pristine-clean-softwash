@@ -59,6 +59,7 @@ export default function RoofWashingPage() {
           <SectionTitle 
             title="Roof Washing Services"
             subtitle="Protect and Enhance Your Home&apos;s Most Important Feature"
+             as="h1"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
             <motion.div {...fadeInUp}>
