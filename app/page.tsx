@@ -14,6 +14,7 @@ import Gallery from '@/components/Gallery/gallery-section'
 import ValuesAndServiceArea from '@/components/Home Page/values-and-service-area'
 import Testimonials from '@/components/Home Page/testimonials.section'
 import { CookieConsentPopup } from '@/components/cookie-consent-popup'
+import ContactForm from '@/components/contact-form'
 
 export const metadata: Metadata = {
   title: 'Pristine Clean Soft Wash | Professional Pressure Washing Services',
@@ -102,6 +103,11 @@ export default function Home() {
 
         <SectionWrapper colorScheme="secondary">
           <Testimonials />
+        </SectionWrapper>
+
+
+        <SectionWrapper colorScheme="secondary">
+          <ContactForm />
         </SectionWrapper>
 
 

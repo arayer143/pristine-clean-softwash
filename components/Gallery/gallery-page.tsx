@@ -21,7 +21,7 @@ const allGalleryItems: GalleryItem[] = [
 ]
 
 const videoThumbnails: GalleryImage[] = galleryPageVideos.map(video => ({
-  src: '/video-thumbnail.jpg', // Replace with an actual video thumbnail
+  src: '/pristinelogo-no-bg.jpg', // Replace with an actual video thumbnail
   alt: video.title,
   category: video.category
 }))

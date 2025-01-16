@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import emailjs from '@emailjs/browser'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -26,26 +25,38 @@ export default function ContactForm() {
   const form = useRef<HTMLFormElement>(null)
   const [status, setStatus] = useState('')
   const [selectedService, setSelectedService] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setIsLoading(true)
 
     if (form.current) {
-      emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
-        form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
-      )
-        .then((result) => {
-          console.log(result.text)
+      const formData = new FormData(form.current)
+      const formJson = Object.fromEntries(formData.entries())
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formJson),
+        })
+
+        if (response.ok) {
           setStatus('Message sent successfully!')
           if (form.current) form.current.reset()
           setSelectedService('')
-        }, (error) => {
-          console.log(error.text)
-          setStatus('Failed to send message. Please try again.')
-        })
+        } else {
+          throw new Error('Failed to send message')
+        }
+      } catch (error) {
+        console.error(error)
+        setStatus('Failed to send message. Please try again.')
+      } finally {
+        setIsLoading(false)
+      }
     }
   }
 
@@ -110,7 +121,9 @@ export default function ContactForm() {
                   <Label htmlFor="message" className="text-gray-700 dark:text-gray-300">Message</Label>
                   <Textarea name="message" id="message" placeholder="Your message here..." required className="bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" />
                 </div>
-                <Button type="submit" className="w-full">Send Message</Button>
+                <Button type="submit" className="w-full" disabled={isLoading}>
+                  {isLoading ? 'Sending...' : 'Send Message'}
+                </Button>
                 {status && <p className="text-sm mt-2 text-center text-gray-700 dark:text-gray-300" aria-live="polite">{status}</p>}
               </form>
             </CardContent>
